@@ -24,5 +24,9 @@ func main() {
 // from learnxinyminutes
 // c is a channel, a concurrency-safe communication object.
 func inc(i int, c chan int) {
-	c <- i + 1 // <- is the "send" operator when a channel appears on the left.
+	count := 0
+	for ; count < 10; count++ {
+		fmt.Println("int is now ", i)
+		c <- i + 1 // <- is the "send" operator when a channel appears on the left.
+	}
 }
